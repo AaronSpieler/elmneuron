@@ -1,0 +1,16 @@
+name: elm_env
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pip=22.2
+  - setuptools=63.2
+  - numpy=1.23
+  - matplotlib=3.5
+  - h5py=3.6
+  - urllib3=1.26
+  - pytorch=1.12.1
+  - jupyterlab=3.6
+  - tqdm=4.65
+  - ipywidgets=8.0
