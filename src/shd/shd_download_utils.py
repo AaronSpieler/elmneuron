@@ -19,7 +19,6 @@ and is licensed under a Creative Commons Attribution
 
 
 def get_shd_dataset(cache_dir, cache_subdir):
-
     # The remote directory with the data files
     base_url = "https://zenkelab.org/datasets"
 

@@ -1,0 +1,11 @@
+{
+    "input_to_synapse_routing": "neuronio_routing",
+    "learn_memory_tau": false,
+    "memory_tau_max": 150.0,
+    "memory_tau_min": 1.0,
+    "num_branch": 45,
+    "num_input": 1278,
+    "num_memory": 50,
+    "num_output": 2,
+    "num_synapse_per_branch": 100
+}

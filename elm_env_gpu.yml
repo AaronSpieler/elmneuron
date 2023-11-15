@@ -1,5 +1,6 @@
-name: elm_env
+name: elm_env_gpu
 channels:
+  - nvidia
   - pytorch
   - conda-forge
 dependencies:
@@ -11,6 +12,12 @@ dependencies:
   - h5py=3.6
   - urllib3=1.26
   - pytorch=1.12.1
+  - pytorch-cuda=12.1
+  - scikit-learn=1.1
+  - seaborn=0.12
   - jupyterlab=3.6
   - tqdm=4.65
   - ipywidgets=8.0
+  - pre-commit
+  - wandb
+  - kaggle
