@@ -27,6 +27,7 @@ class ELM(jit.ScriptModule):
         "num_memory",
         "lambda_value",
         "mlp_num_layers",
+        "mlp_activation",
         "memory_tau_min",
         "memory_tau_max",
         "learn_memory_tau",
@@ -44,6 +45,7 @@ class ELM(jit.ScriptModule):
         lambda_value: float = 5.0,
         mlp_num_layers: int = 1,
         mlp_hidden_size: Optional[int] = None,
+        mlp_activation: str = "relu",
         tau_s_value: float = 5.0,
         memory_tau_min: float = 1.0,
         memory_tau_max: float = 1000.0,
@@ -59,6 +61,7 @@ class ELM(jit.ScriptModule):
         self.num_memory = num_memory
         self.lambda_value = lambda_value
         self.mlp_num_layers = mlp_num_layers
+        self.mlp_activation = mlp_activation
         self.memory_tau_min, self.memory_tau_max = memory_tau_min, memory_tau_max
         self.learn_memory_tau = learn_memory_tau
         self.tau_s_value, self.w_s_value = tau_s_value, w_s_value
@@ -78,7 +81,11 @@ class ELM(jit.ScriptModule):
 
         # initialization of model weights
         self.mlp = MLP(
-            self.num_mlp_input, self.mlp_hidden_size, num_memory, mlp_num_layers
+            self.num_mlp_input,
+            self.mlp_hidden_size,
+            num_memory,
+            mlp_num_layers,
+            mlp_activation,
         )
         self._proto_w_s = nn.parameter.Parameter(
             torch.full((self.num_synapse,), w_s_value)

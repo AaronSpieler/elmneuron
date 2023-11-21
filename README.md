@@ -3,6 +3,8 @@
 This repository features a minimal implementation of the (Branch) Expressive Leaky Memory neuron in PyTorch.
 Notebooks to train and evaluate on NeuronIO are provided, as well as pre-trained models of various sizes.
 
+![The ELM neuron](./elm_neuron_sketch.png)
+
 ### Installation:
 
 1. Create the conda environment with `conda env create -f elm_env.yml`
@@ -16,6 +18,8 @@ The __models__ folder contains various sized Branch-ELM neuron models pre-traine
 |-----------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
 | #params   | 4601   | 4708   | 4823   | 5077   | 5363   | 5852   | 6827   | 8002   | 9377   | 10952  | 14702  | 19252  | 34127  | 54002  |
 | AUC       | 0.9437 | 0.9582 | 0.9558 | 0.9757 | 0.9827 | 0.9878 | 0.9915 | 0.9922 | 0.9926 | 0.9929 | 0.9934 | 0.9934 | 0.9938 | 0.9935 |
+
+We also include a best effort trained ELM neuron that achieves 0.9946 AUC with $d_m=100$.
 
 ### Notebooks:
 - __train_elm_on_shd.ipynb__: train an ELM neuron on SHD or SHD-Adding Dataset.

@@ -42,6 +42,10 @@ class NeuronioEvaluator:
         self.verbose = verbose
         self.encoding = encoding
 
+        # some sanity checks
+        assert self.burn_in_time < self.input_window_size
+        assert self.burn_in_time <= self.ignore_time_at_start_ms
+
         X_test, y_spike_test, y_soma_test = parse_sim_experiment_file(
             test_file, verbose=verbose, encoding=encoding
         )
@@ -62,6 +66,7 @@ class NeuronioEvaluator:
         core_results = filter_and_extract_core_results(
             *test_predictions,
             desired_FP_list=self.desired_FP_list,
+            ignore_time_at_start_ms=self.ignore_time_at_start_ms,
             verbose=self.verbose,
         )
 

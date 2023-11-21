@@ -1,0 +1,11 @@
+{
+    "batch_size": 32,
+    "batches_per_epoch": 2500,
+    "burn_in_time": 150,
+    "file_load_fraction": 0.5,
+    "input_window_size": 500,
+    "learning_rate": 0.0005,
+    "num_epochs": 100,
+    "num_prefetch_batch": 100,
+    "num_workers": 10
+}

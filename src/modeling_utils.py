@@ -40,15 +40,25 @@ class MLP(nn.Module):
     """Multi-layer perceptron (MLP) model."""
 
     def __init__(
-        self, input_size: int, hidden_size: int, num_output: int, num_layers: int
+        self,
+        input_size: int,
+        hidden_size: int,
+        num_output: int,
+        num_layers: int,
+        activation: str = "relu",
     ):
         super(MLP, self).__init__()
         next_input_size = input_size
 
         layers = []
-        for i in range(num_layers):
+        for _ in range(num_layers):
             layers.append(nn.Linear(next_input_size, hidden_size))
-            layers.append(nn.ReLU())
+            if activation == "relu":
+                layers.append(nn.ReLU())
+            elif activation == "silu":
+                layers.append(nn.SiLU())
+            else:
+                raise ValueError(f"Unknown activation: {activation}")
             next_input_size = hidden_size
 
         layers.append(nn.Linear(next_input_size, num_output))
