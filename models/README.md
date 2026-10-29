@@ -6,9 +6,9 @@
 ## Provided files per model:
 - __neuronio_best_model_state.pt__: the serialized model weights
 - __eval_results.json__: the train, valid and test set results
-- __model_config.pt__: settings to load model weights
-- __train_config.pt__: setting to reproduce results
-- __model_stats.pt__: info such as number of parameters
+- __model_config.json__: settings to load model weights
+- __train_config.json__: setting to reproduce results
+- __model_stats.json__: info such as number of parameters
 
 ## Evaluate or infer using a pre-trained model:
 => __/notebooks/eval_elm_on_neuronio.ipynb__
